@@ -70,7 +70,7 @@ For example, instead of refreshing the page when a user upvotes or downvotes, we
 
 ## Resources
 - [Git Workflow for Teams](https://gist.github.com/mikelikesbikes/ccbf4c7fd90e647138c6)
-- [Git: Rebase vs Merge](http://gitguru.com/2009/02/03/rebase-v-merge-in-git/)
+- [Git: Rebase vs Merge](https://www.atlassian.com/git/tutorials/merging-vs-rebasing/)
 - [Git Resources](http://git-scm.com/book/en/v2/Getting-Started-About-Version-Control)
 - [Sessions and User Authentication](https://talks.devbootcamp.com/sessions-and-user-authentication) 
 - [Manifesto for Agile Practices](http://agilemanifesto.org/)
