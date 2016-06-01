@@ -10,7 +10,7 @@ post '/login' do
     session[:id] = @user.id
     redirect "users/#{@user.id}"
   else
-    @errors = ["your email or password is not on the level"]
+    @errors = ["your email or password is not appropriate"]
     erb :'sessions/login'
   end
 end
