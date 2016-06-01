@@ -1,12 +1,14 @@
-get 'users/new' do
+get '/users/new' do
   erb :'users/new'
 end
 
 post '/users' do
   @user = User.new(username: params[:username], email: params[:email], password: params[:password])
-  if @user.save
-    redirect '/users/#{id}'
+  if @user.valid? == true
+    @user.save
+    erb :'/sessions/login'
   else
-    erb :'users/new'
+    @errors = @user.errors.full_messages
+    erb :'/users/new'
   end
 end

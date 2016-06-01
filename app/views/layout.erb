@@ -22,13 +22,14 @@
 <body>
 <div id="content">
   <header>
-    <a href="/"><img src="/img/zenchinese.png" class="logo"></a>
+    <a href="/"><img src="/img/staxlogo.png" class="logo"></a>
     <div id="login-toolbar">
       <% if current_user %>
-        <a href="/logout">Logout</a>
+        <a href="/users/logout">Logout</a>
       <% else %>
-        <a href="/login">Login</a>
+        <a href="/users/login">Login</a>
       <% end %>
+    </div>
   </header>
   <%= yield %>
 </div>

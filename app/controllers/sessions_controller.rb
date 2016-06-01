@@ -1,21 +1,21 @@
 enable :sessions
 
 get '/users/login' do
-  erb :'sessions/login'
+  erb :'/sessions/login'
 end
 
-post '/login' do
-  @user = User.find_by(username: params[:username])
-  if @user && @user.authenticate(params[:password])
-    session[:id] = @user.id
-    redirect "users/#{@user.id}"
+post '/users/login' do
+  @user = User.find_by(email: params['email'])
+  if @user && @user.authenticate(params['password'])
+    session[:user_id] = @user.id
+    redirect '/users/#(:user_id}'
   else
-    @errors = ["your email or password is not appropriate"]
-    erb :'sessions/login'
+    @errors = ["your email or password is discombobulating"]
+    erb :'/sessions/login'
   end
 end
 
-get '/logout' do
+get '/users/logout' do
   session.clear
   redirect '/'
 end
