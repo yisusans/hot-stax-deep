@@ -1,0 +1,8 @@
+<div>
+  <form action='/question' method='post'>
+    <input type='text' name='title'/>
+    <input type='text' name='body'/>
+    <input type="hidden" name="user_id" value="<% current_user.id %>">
+    <input type='submit' value='Post'/>
+  </form>
+</div>
