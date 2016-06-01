@@ -1,0 +1,7 @@
+<form action="/questions/<%=@question.id%>/comments" method="post">
+  <input type="hidden" name="vote" value="<%=@question.id%>">
+  <input type="submit" value="Vote" class="button">
+</form>
+
+
+<%=question.vote.count %> votes
