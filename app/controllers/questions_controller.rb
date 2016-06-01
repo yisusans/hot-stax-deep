@@ -6,7 +6,7 @@ end
 
 
 get '/questions/new' do
-  if logged_in? && current_user.id == @question.user_id
+  if logged_in?
     erb :'questions/new'
   else
     @errors = @question.errors.full_messages
