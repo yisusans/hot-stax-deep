@@ -8,7 +8,7 @@ post '/users/login' do
   @user = User.find_by(email: params['email'])
   if @user && @user.authenticate(params['password'])
     session[:user_id] = @user.id
-    redirect '/users/#(:user_id}'
+    erb :'/users/show'
   else
     @errors = ["your email or password is discombobulating"]
     erb :'/sessions/login'
