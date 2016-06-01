@@ -1,20 +1,29 @@
-get '/users/new' do
-  erb :'users/new'
+get '/users' do
+  erb :'users/show'
 end
 
-post '/users' do
-  @user = User.new(username: params[:username], email: params[:email], password: params[:password])
-  if @user.valid? == true
-    @user.save
-    erb :'/sessions/login'
+get '/users/new' do
+  erb :"users/new"
+end
+
+get '/users/register' do
+  erb :'users/register'
+end
+
+get '/users/:id' do
+  @user = User.find(params[:id])
+  erb :'users/show'
+end
+
+
+post '/users/register' do
+  @user = User.new(params[:entry])
+  if @user.save
+    erb :'users/show'
   else
     @errors = @user.errors.full_messages
     erb :'/users/new'
   end
 end
 
-get '/users/:user_id' do
-  @user = User.find(params[:user_id])
 
-  erb :'users/show'
-end
