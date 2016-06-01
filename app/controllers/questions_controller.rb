@@ -23,3 +23,10 @@ get '/questions/:id' do
   erb :'questions/show'
 end
 
+get '/questions/:id/edit' do
+  erb :'questions/edit'
+end
+
+put '/questions/:id' do
+
+end
