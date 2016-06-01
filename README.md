@@ -46,7 +46,7 @@ The decision to make use of Polymorphic Associations is up to your group. **You 
 
 ### AJAX
 
-We need to practice our new AJAX skills. Your team should decide what specific pieces of functionality y'all want to AJAX. A good place to start is AJAXing the voting functionality. 
+We need to practice our new AJAX skills. Your team should decide what specific pieces of functionality y'all want to AJAX. A good place to start is AJAXing the voting functionality.
 
 For example, instead of refreshing the page when a user upvotes or downvotes, we just want to make a quick AJAX call to our server to send that info and update the vote count on our page.
 
@@ -63,7 +63,7 @@ For example, instead of refreshing the page when a user upvotes or downvotes, we
  * Your team members' names
  * The user stories that define your MVP
 * You should practice "good" git workflow and commit often
-  * **You should not merge your own branches. A team member should review your code then merge it.** 
+  * **You should not merge your own branches. A team member should review your code then merge it.**
 * You should have multiple AJAX calls to enhance a user's experience
 * You will be demo-ing your MVP
  * Show us your app doing the essential functionalities listed above
@@ -72,7 +72,7 @@ For example, instead of refreshing the page when a user upvotes or downvotes, we
 - [Git Workflow for Teams](https://gist.github.com/mikelikesbikes/ccbf4c7fd90e647138c6)
 - [Git: Rebase vs Merge](https://www.atlassian.com/git/tutorials/merging-vs-rebasing/)
 - [Git Resources](http://git-scm.com/book/en/v2/Getting-Started-About-Version-Control)
-- [Sessions and User Authentication](https://talks.devbootcamp.com/sessions-and-user-authentication) 
+- [Sessions and User Authentication](https://talks.devbootcamp.com/sessions-and-user-authentication)
 - [Manifesto for Agile Practices](http://agilemanifesto.org/)
 - [Sample Scrum Board](http://amareshv.files.wordpress.com/2011/03/fairydustboard_20110324.jpg)
 - [Trello](https://trello.com/) - great resource to organize workflow within a group project
@@ -82,3 +82,7 @@ For example, instead of refreshing the page when a user upvotes or downvotes, we
 [Slack]: https://slack.com/
 [rorpa]: http://richonrails.com/articles/polymorphic-associations-in-rails
 [cls]: http://en.wikipedia.org/wiki/Command-line_interface
+=======
+# hot-stax-deep
+Stack Overflow Clone
+
