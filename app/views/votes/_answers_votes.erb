@@ -1,0 +1,8 @@
+<% if current_user %>
+  <form action="/answers/<%=answer.id%>/votes" method="post">
+    <input type="hidden" name="vote" value="<%=answer.id%>">
+    <input type="submit" value="Vote" class="button">
+  </form>
+<% end %>
+
+<%=answer.vote.count %> votes
