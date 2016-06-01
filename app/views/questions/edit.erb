@@ -1,8 +1,8 @@
 <div>
-  <form action='/question/edit' method='post'>
-    <input type='text' name='title'/>
-    <input type='text' name='body'/>
+  <form action='/question/<%= current_user.id %>' method='post'>
+    <div><input type='text' name='title' value="<%= @question.try(:title) %>"</div>
+    <div><textarea name='body' value="<%= @question.try(:body) %>"</textarea></div>
     <input type="hidden" name="user_id" value="<% current_user.id %>">
-    <input type='submit' value='Post'/>
+    <div><input type='submit' value='Post'/></div>
   </form>
 </div>
