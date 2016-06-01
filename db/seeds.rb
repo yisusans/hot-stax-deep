@@ -13,7 +13,7 @@ end
 questions = 100.times.map do
   Question.create!(
     user_id: rand(1..100),
-    title: Faker::Company.name,
+    title: Faker::Book.title,
     body: Faker::Company.catch_phrase
     )
 end
@@ -22,11 +22,11 @@ answers = 100.times.map do
   Answer.create!(
     user_id: rand(1..100),
     question_id: rand(1..100),
-    answer: Faker::Company.profession
+    answer: Faker::Lorem.paragraph(2)
     )
   end
 
-comments_qs = 50.times.map do
+comments_qs = 100.times.map do
   Comment.create!(
     user_id: rand(1..100),
     comment: Faker::Lorem.sentences,
@@ -35,7 +35,7 @@ comments_qs = 50.times.map do
   )
 end
 
-comments_as = 50.times.map do
+comments_as = 100.times.map do
   Comment.create!(
     user_id: rand(1..100),
     comment: Faker::Lorem.sentences,
@@ -44,7 +44,7 @@ comments_as = 50.times.map do
   )
 end
 
-votes_qs = 50.times.map do
+votes_qs = 100.times.map do
   Vote.create!(
     user_id: rand(1..100),
     voteable_id: rand(1..100),
@@ -52,7 +52,7 @@ votes_qs = 50.times.map do
   )
 end
 
-votes_as = 50.times.map do
+votes_as = 100.times.map do
   Vote.create!(
     user_id: rand(1..100),
     voteable_id: rand(1..100),
