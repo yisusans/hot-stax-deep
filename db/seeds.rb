@@ -1,10 +1,8 @@
-# require 'Faker'
-
 User.delete_all
-# Question.delete_all
-# Answer.delete_all
-# Comment.delete_all
-# Vote.delete_all
+Question.delete_all
+Answer.delete_all
+Comment.delete_all
+Vote.delete_all
 
 users = 100.times.map do
   User.create!( :username => Faker::Internet.user_name,
