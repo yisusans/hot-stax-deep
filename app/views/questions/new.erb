@@ -1,0 +1,8 @@
+<div>
+  <form action='/question' method='post'>
+    <div><input type='text' name='title' placeholder='Title'/></div>
+    <div><textarea name='body' placeholder='Post'></textarea></div>
+    <input type="hidden" name="user_id" value="<% current_user.id %>">
+    <div><input type='submit' value='Post'/></div>
+  </form>
+</div>
