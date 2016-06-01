@@ -1,0 +1,13 @@
+<% if @errors %>
+    <%= @errors %>
+<% end %>
+
+<div>
+  <form action="/users/login" method="post">
+    <label for="email">email:</label>
+    <input type="text" name="email" placeholder="email">
+    <label for="password">password:</label>
+    <input type="password" name="password" placeholder="password">
+    <input type="submit" value="log N2 stax">
+  </form>
+</div>
