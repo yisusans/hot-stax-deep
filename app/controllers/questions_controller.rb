@@ -49,8 +49,6 @@ put '/questions/:id' do
   end
 end
 
-
-
 delete '/questions/:id' do
   if logged_in? && current_user.id == @entry.user_id
     @question.destroy
@@ -60,8 +58,6 @@ delete '/questions/:id' do
     erb :'questions/index'
   end
 end
-
-
 
 get '/questions/:id/edit' do
   @question = Question.find_by(id: params['id'])
