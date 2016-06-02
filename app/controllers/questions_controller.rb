@@ -16,8 +16,6 @@ get '/questions/new' do
   end
 end
 
-
-
 post '/questions' do
   @author = User.find_by(id: current_user.id)
   @question = Question.new(title: params['title'], body: params['body'], user_id: @author.id)
@@ -66,8 +64,9 @@ end
 
 
 get '/questions/:id/edit' do
+  @question = Question.find_by(id: params['id'])
+  @questions = Question.all
   if logged_in? && current_user.id == @question.user_id
-    @question = Question.find_by(id: params['id'])
     erb :'questions/edit'
   else
     @errors = "Please log in before trying to edit a question"
