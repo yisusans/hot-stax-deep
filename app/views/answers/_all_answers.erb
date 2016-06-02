@@ -1,8 +1,4 @@
 
-<% if @errors %>
-    <%=@errors %>
-<% end %>
-
   <div class="answers-post" >
     <%@answers.each do |answer|%>
       <div class="one-answer">
@@ -22,3 +18,8 @@
 
     <%end%>
   </div>
+<% if @errors %>
+  <% @errors.each do |error_message| %>
+    <p><%= error_message %></p>
+  <% end %>
+<% end %>

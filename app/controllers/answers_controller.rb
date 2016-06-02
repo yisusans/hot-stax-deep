@@ -7,7 +7,7 @@ post '/questions/:id/answers' do
   if answer.save
     erb :'answers/_all_answers', layout: false
   else
-    @errors = "Please type an answer:"
+    @errors = ["Please type an answer:"]
     erb :'answers/_all_answers', layout: false
   end
 

@@ -3,12 +3,10 @@
 <h3 class="author_links"><a href='/users/<%=@question.user.id%>'><%= @question.user.username %></a></h3>
 <p id="body"><%= @question.body %></p>
 <p id="date">Posted: <%= @question.created_at %></p>
-<% if @errors %>
-  <p><%=@errors%></p>
-<%end%>
-<%=erb(:"/answers/_show")%>
 
 <%=erb(:"/answers/_all_answers")%>
+<%=erb(:"/answers/_show")%>
+
 
 <% @comments.each do |comment| %>
   <div class="comments">
