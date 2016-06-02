@@ -13,3 +13,23 @@ $(document).ready( function(){
       });
     });
   });
+
+  $(".question-box").on ("submit", function(event){
+    event.preventDefault();
+    var $target = $(event.target)
+    var request = $.ajax ({
+      method: "POST",
+      url: '/questions',
+      data: $target.serialize()
+    });
+    request.done(function (msg) {
+      // debugger
+      $(".question_main").html($(msg).find('.answer-box'))
+      });
+    });
+
+
+
+  // });
+
+
