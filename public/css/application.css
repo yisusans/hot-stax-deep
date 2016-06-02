@@ -80,3 +80,13 @@ border: 1px solid;
   display: block;
   margin-top: -10px;
 }
+
+#page-wrap {
+    text-align: left;
+    width: 700px;
+    margin: 0 auto;
+}
+
+body {
+    text-align: center;
+}
