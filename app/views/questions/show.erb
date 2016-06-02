@@ -3,7 +3,6 @@
 <h3 class="author_links"><a href='/users/<%=@question.user.id%>'><%= @question.user.username %></a></h3>
 <p id="body"><%= @question.body %></p>
 <p id="date">Posted: <%= @question.created_at %></p>
-</div>
 
 <% @comments.each do |comment| %>
   <div class="comments">
@@ -15,4 +14,4 @@
   </div>
   <%end%>
 
-<%=erb (:'/comments/_questions_comments')%>
+
