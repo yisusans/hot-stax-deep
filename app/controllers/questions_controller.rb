@@ -1,9 +1,11 @@
+get '/' do
+  redirect to('/questions')
+end
+
 get '/questions' do
   @questions = Question.all
   erb :'questions/index'
 end
-
-
 
 get '/questions/new' do
   if logged_in?
