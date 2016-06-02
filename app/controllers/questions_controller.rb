@@ -21,22 +21,19 @@ post '/questions' do
   @question = Question.new(title: params['title'], body: params['body'], user_id: @author.id)
 
   if @question.save
-    redirect "/questions/#{@question.id}"
+    erb :'questions/_appended_question'
   else
     @errors = @question.errors.full_messages
     erb :'questions/new'
   end
 end
 
-
-
 get '/questions/:id' do
   @question = Question.find_by(id: params['id'])
   @comments = @question.comments
+  @answers = @question.answers
   erb :'questions/show'
 end
-
-
 
 put '/questions/:id' do
   @question.assign_attributes([:question])

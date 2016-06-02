@@ -1,0 +1,5 @@
+<div class="question_main">
+  <a href="/questions/<%=@question.id%>"><h1><%= @question.title %></h1></a>
+  <a href="/users/<%=@question.user.id%>"><h3><%= @question.user.username%></h3></a>
+  <p><%= @question.body[0..30] + "..." %></p>
+</div>

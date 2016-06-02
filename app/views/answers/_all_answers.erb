@@ -1,0 +1,8 @@
+
+<div class="answers-post" >
+  <%@answers.each do |answer|%>
+    <p><%=answer.answer%></p>
+    <p><%=answer.user.username%></p>
+    <p><%=answer.created_at%></p>
+  <%end%>
+</div>
