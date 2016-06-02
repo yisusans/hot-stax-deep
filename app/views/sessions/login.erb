@@ -2,12 +2,13 @@
     <%= @errors %>
 <% end %>
 
-<div>
-  <form action="/users/login" method="post">
-    <label for="email">email:</label>
-    <input type="text" name="email" placeholder="email">
-    <label for="password">password:</label>
-    <input type="password" name="password" placeholder="password">
-    <input type="submit" value="log N2 stax">
+<div class="login">
+  <form>
+    <a href="/"><img src="/img/staxlogo.png" class="logo"></a>
+    <form action="/users/login" method="post">
+    <div><input type="text" name="email" placeholder="email"></div>
+    <div><input type="password" name="password" placeholder="password"></div>
+    <button>login</button>
+    <p class="message">Not registered? <a href="/users/new">Create an account</a></p>
   </form>
 </div>

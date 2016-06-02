@@ -6,7 +6,7 @@
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
   -->
-  <link rel="stylesheet" href="/css/normalize.css">
+  <!-- <link rel="stylesheet" href="/css/normalize.css"> -->
   <!--
     application.css is where you put your styles
   -->
@@ -17,13 +17,13 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+  <title>Stack Overflow</title>
 </head>
 <body>
 <div id="content">
-  <header>
+  <!-- <header>
     <a href="/"><img src="/img/staxlogo.png" class="logo"></a>
-    <div id="login-toolbar">
+    <div class="login">
       <% if current_user %>
         <a href="/users/logout">Logout</a>
         <a href= "/questions/new">Ask Question</a>
@@ -33,7 +33,7 @@
       <% end %>
       <a href="/questions">Home</a>
     </div>
-  </header>
+  </header> -->
   <%= yield %>
 </div>
 </body>
