@@ -3,6 +3,7 @@
 <p><%= @question.body %></p>
 <p><a href='/users/<%=@question.user.id%>'><%= @question.user.username %></a></p>
 <p><%= @question.created_at %></p>
+<%=erb (:'/comments/_questions_comments')%>
 </div>
 
 <% @comments.each do |comment| %>
@@ -15,4 +16,4 @@
   </div>
   <%end%>
 
-<%=erb (:'/comments/_questions_comments')%>
+
