@@ -1,3 +1,4 @@
+
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 .login {
@@ -45,6 +46,55 @@ form button {
 form .message a {
   color: #EC0419;
   text-decoration: none;
+
+.all-questions {
+    text-align: center;
+}
+
+.logo {
+    width: 50px;
+}
+
+.top-bar-menu-links {
+    border-top: 0px;
+}
+
+a {
+    text-decoration: none;
+}
+header {
+    text-align: right;
+    background-color: black;
+    margin: 0px;
+    color: white;
+    font-family: Helvetica;
+    word-spacing: 15px;
+}
+.question_show {
+border: 1px solid;
+  margin: 50px;
+  padding-left: 20px;
+}
+
+.question_show h1 {
+  display: inline-block;
+}
+
+.question_show #body {
+  display: block;
+  margin-top: -10px;
+  margin-left: 12px;
+}
+
+.question_show #date {
+  display: block;
+  font-size: 10px;
+}
+
+.question_show .author_links {
+  text-decoration: none;
+  display: inline-block;
+  margin-left: 10px;
 }
 
 body {
@@ -52,4 +102,43 @@ body {
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+
+.question_main {
+  border: 1px solid black;
+  margin: 2px;
+  width: 600px;
+  padding-left: 20px;
+  margin-left: 50px;
+}
+
+.question_main h1 {
+  color: black;
+  text-decoration: none;
+  font-size: 20px;
+  display: inline-block;
+}
+
+.question_main h3 {
+  text-decoration: none;
+  font-size: 10px;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.question_main p {
+  font-size: 14px;
+  display: block;
+  margin-top: -10px;
+}
+
+#page-wrap {
+    text-align: left;
+    width: 700px;
+    margin: 0 auto;
+}
+
+body {
+    text-align: center;
 }
