@@ -2,13 +2,33 @@
     <%=@errors %>
 <% end %>
 
-<% @questions.each do |question| %>
-<div class="question_main">
-  <a href="/questions/<%=question.id%>"><h1><%= question.title %></h1></a>
-  <a href="/users/<%=question.user.id%>"><h3><%= question.user.username%></h3></a>
-  <p><%= question.body[0..30] + "..." %></p>
+
+
+<div class="question-wrapper">
+  <% @questions.each do |question| %>
+    <div class="question_main">
+      <a href="/questions/<%=question.id%>"><h1><%= question.title %></h1></a>
+      <a href="/users/<%=question.user.id%>"><h3><%= question.user.username%></h3></a>
+      <p><%= question.body[0..30] + "..." %></p>
+    </div>
+  <% end %>
 </div>
 
+
+
+<% if @errors %>
+  <% @errors.each do |error_message| %>
+    <p><%= error_message %></p>
+  <% end %>
 <% end %>
 
-<%= erb(:'questions/new')%>
+
+
+<div>
+  <form class="question-box" action='/questions' method='post'>
+    <div><input id='title-text-box' type='text' name='title' placeholder='Title'/></div>
+    <div><textarea id='body-text-box' name='body' placeholder='Post'></textarea></div>
+    <input type="hidden" name="user_id" value="<% current_user.id %>">
+    <div><input type='submit' value='Post'/></div>
+  </form>
+</div>

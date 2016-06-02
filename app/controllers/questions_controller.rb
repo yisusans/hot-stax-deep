@@ -21,7 +21,7 @@ post '/questions' do
   @question = Question.new(title: params['title'], body: params['body'], user_id: @author.id)
 
   if @question.save
-    redirect "/questions/#{@question.id}"
+    erb :'questions/_appended_question'
   else
     @errors = @question.errors.full_messages
     erb :'questions/new'

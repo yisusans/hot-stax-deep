@@ -11,7 +11,7 @@ $(document).ready( function(){
     request.done(function (msg) {
       $(".answers-post").html(msg)
       });
-    });
+    $("#answer-text-box").val("");
   });
 
   $(".question-box").on ("submit", function(event){
@@ -22,14 +22,17 @@ $(document).ready( function(){
       url: '/questions',
       data: $target.serialize()
     });
+
     request.done(function (msg) {
-      // debugger
-      $(".question_main").html($(msg).find('.answer-box'))
-      });
+      $(".question-wrapper").append($(msg).find('.question_main'))
     });
 
+    $("#title-text-box").val("");
+    $("#body-text-box").val("");
+  });
 
 
-  // });
+
+});
 
 
