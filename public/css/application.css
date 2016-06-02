@@ -6,6 +6,7 @@
   padding: 8% 0 0;
   margin: auto;
 }
+
 form {
   position: relative;
   z-index: 1;
@@ -46,6 +47,7 @@ form button {
 form .message a {
   color: #EC0419;
   text-decoration: none;
+}
 
 .all-questions {
     text-align: center;
@@ -55,6 +57,13 @@ form .message a {
     width: 50px;
 }
 
+.logo-login{
+    width: 100%;
+}
+
+#awesome-login {
+    padding-top: 50px;
+}
 .top-bar-menu-links {
     border-top: 0px;
 }
@@ -62,6 +71,7 @@ form .message a {
 a {
     text-decoration: none;
 }
+
 header {
     text-align: right;
     background-color: black;
