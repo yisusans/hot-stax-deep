@@ -5,8 +5,9 @@
 <p id="date">Posted: <%= @question.created_at %></p>
 
 <%=erb(:"/answers/_all_answers")%>
-<%=erb(:"/answers/_show")%>
-
+<% if logged_in? %>
+  <%=erb(:"/answers/_show")%>
+<% end %>
 
 <% @comments.each do |comment| %>
   <div class="comments">

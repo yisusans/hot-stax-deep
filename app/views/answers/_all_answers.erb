@@ -1,23 +1,32 @@
+<div class="answers-post" >
+  <%@answers.each do |answer|%>
+    <p><%=answer.answer%></p>
+    <p><%=answer.user.username%></p>
+    <p><%=answer.created_at%></p>
+  <%end%>
+</div>
 
-  <div class="answers-post" >
-    <%@answers.each do |answer|%>
-      <div class="one-answer">
-        <h2><%=answer.answer%></h2>
-      <h5><%=answer.user.username%></h5>
-      <p><%=answer.created_at%></p>
 
-        <% if logged_in? %>
-          <form class="vote-form" action="/answers/<%=answer.id%>/votes" method="post" data-answer-id="<%=answer.id%>">
-            <input type="hidden" name="vote" value="<%=answer.id%>">
-            <input type="submit" value="Vote" class="button">
-          </form>
-        <% end %>
-       <div id="vote-count"><%=answer.votes.count %></div> votes
+<div class="answers-post" >
+  <%@answers.each do |answer|%>
+    <div class="one-answer">
+      <h2><%=answer.answer%></h2>
+    <h5><%=answer.user.username%></h5>
+    <p><%=answer.created_at%></p>
+
+      <% if logged_in? %>
+        <form class="vote-form" action="/answers/<%=answer.id%>/votes" method="post" data-answer-id="<%=answer.id%>">
+          <input type="hidden" name="vote" value="<%=answer.id%>">
+          <input type="submit" value="Vote" class="button">
+        </form>
+      <% end %>
+     <div id="vote-count"><%=answer.votes.count %></div> votes
 <div>###############################</div>
-      </div>
+    </div>
 
-    <%end%>
-  </div>
+  <%end%>
+</div>
+
 <% if @errors %>
   <% @errors.each do |error_message| %>
     <p><%= error_message %></p>
