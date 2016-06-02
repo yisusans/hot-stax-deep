@@ -29,7 +29,7 @@ answers = 100.times.map do
 comments_qs = 100.times.map do
   Comment.create!(
     user_id: rand(1..100),
-    comment: Faker::Lorem.sentences,
+    comment: Faker::Lorem.sentence(3),
     commentable_id: rand(1..100),
     commentable_type: "Question"
   )

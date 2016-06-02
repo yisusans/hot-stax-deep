@@ -65,3 +65,11 @@ code {
     margin-left: -1em;
     overflow: auto;
 }
+
+.question {
+    border: 1px solid;
+}
+
+.comments {
+    border: 1px dashed;
+}

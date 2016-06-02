@@ -1,3 +1,15 @@
 <p>Wilkommen to Stax:</p>
 
 <div><%= @user.username %></div>
+<div>
+  <%@user.questions.each do |question|%>
+    <%=question.title%>
+    -------
+    <%end%>
+</div>
+<div>
+  <%@user.comments.each do |comment|%>
+    <p><%=comment.comment%></p>
+    ******
+    <%end%>
+</div>

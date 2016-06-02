@@ -1,5 +1,11 @@
+<% if @errors %>
+  <% @errors.each do |error_message| %>
+    <p><%= error_message %></p>
+  <% end %>
+<% end %>
+
 <div>
-  <form action='/question' method='post'>
+  <form action='/questions' method='post'>
     <div><input type='text' name='title' placeholder='Title'/></div>
     <div><textarea name='body' placeholder='Post'></textarea></div>
     <input type="hidden" name="user_id" value="<% current_user.id %>">
