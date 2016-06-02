@@ -20,9 +20,7 @@
   <title></title>
 </head>
 <body>
-<div id="content">
   <header>
-    <a href="/"><img src="/img/staxlogo.png" class="logo"></a>
     <div id="login-toolbar">
       <% if current_user %>
         <a href="/users/logout">Logout</a>
@@ -32,8 +30,11 @@
         <a href= "/users/register">Register</a>
       <% end %>
       <a href="/questions">Home</a>
+    <a href="/"><img align="center"src="/img/staxlogo.png" class="logo"></a>
     </div>
   </header>
+
+<div id="content">
   <%= yield %>
 </div>
 </body>
