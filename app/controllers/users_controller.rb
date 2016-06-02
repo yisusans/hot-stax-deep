@@ -6,17 +6,7 @@ get '/users/new' do
   erb :"users/new"
 end
 
-get '/users/register' do
-  erb :'users/register'
-end
-
-get '/users/:id' do
-  @user = User.find(params[:id])
-  erb :'users/show'
-end
-
-
-post '/users/register' do
+post '/users/new' do
   @user = User.new(params[:entry])
   if @user.save
     erb :'users/show'
@@ -25,5 +15,11 @@ post '/users/register' do
     erb :'/users/new'
   end
 end
+
+get '/users/:id' do
+  @user = User.find(params[:id])
+  erb :'users/show'
+end
+
 
 
