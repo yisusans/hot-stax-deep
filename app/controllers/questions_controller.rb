@@ -11,18 +11,18 @@ get '/questions/new' do
   if logged_in?
     erb :'questions/new'
   else
-    @errors = @question.errors.full_messages
-    erb :'questions/index'
+    @errors = "Login to ask a question:"
+    erb :'sessions/login'
   end
 end
 
 
 
 post '/questions' do
-  @author = User.find_by(id: params['user_id'])
-  @question = Question.new(title: params['title'], body: params['body'], username: @author)
+  @author = User.find_by(id: current_user.id)
+  @question = Question.new(title: params['title'], body: params['body'], user_id: @author.id)
 
-  if Question.save
+  if @question.save
     redirect "/questions/#{@question.id}"
   else
     @errors = @question.errors.full_messages
