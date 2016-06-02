@@ -1,16 +1,1 @@
-<% if @errors %>
-  <% @errors.each do |error_message| %>
-    <%= error_message %>
-  <% end %>
-<% end %>
-
-<div class="login">
-  <form action="/users" method="post">
-    <a href="/"><img src="/img/staxlogo.png" class="logo-login"></a>
-    <div><input type="text" name="username" placeholder="username"></div>
-    <div><input type="email" name="email" placeholder="email"></div>
-    <div><input type="password" name="password" placeholder="password"></div>
-    <button>Register</button>
-  </form>
-</div>
 
