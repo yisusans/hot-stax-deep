@@ -28,15 +28,12 @@ post '/questions' do
   end
 end
 
-
-
 get '/questions/:id' do
   @question = Question.find_by(id: params['id'])
   @comments = @question.comments
+  @answers = @question.answers
   erb :'questions/show'
 end
-
-
 
 put '/questions/:id' do
   @question.assign_attributes([:question])
