@@ -11,11 +11,15 @@ post '/questions/:id/votes' do
 end
 
 post '/answers/:id/votes' do
+
   answer = Answer.find_by(id: params[:id])
   vote = Vote.new(voteable_type: "Answer", voteable_id: answer.id, user_id: current_user.id)
   question_id = answer.question.id
   if vote.save
-    redirect "/questions/#{question_id}"
+
+    content_type :json
+    {votes: answer.votes.count}.to_json
+    # redirect "/questions/#{question_id}"
   end
 
 end

@@ -37,10 +37,12 @@ $(document).ready( function(){
 
 
 
-  $(".vote-form").on ("submit", function(event){
+  $(".answers-post").on ("submit", ".vote-form", function(event){
     event.preventDefault();
     var $target = $(event.target)
     var $data = $target.data()
+    // console.log('/answers/'+ $data.answerId + '/votes');
+    debugger;
     var request = $.ajax ({
       method: "POST",
       url: '/answers/'+ $data.answerId + '/votes',
@@ -48,7 +50,11 @@ $(document).ready( function(){
     });
 
     request.done(function (msg) {
-      $("#vote-count"[]).html($(msg).find('.question_main'))
+      console.log(msg['votes']);
+      $target.parent().find('#vote-count').text(msg["votes"])
+    });
+    request.fail(function (msg) {
+      console.log(msg)
     });
   });
 
