@@ -14,6 +14,9 @@ $(document).ready( function(){
     $("#answer-text-box").val("");
   });
 
+
+
+
   $(".question-box").on ("submit", function(event){
     event.preventDefault();
     var $target = $(event.target)
@@ -29,6 +32,24 @@ $(document).ready( function(){
 
     $("#title-text-box").val("");
     $("#body-text-box").val("");
+  });
+
+
+
+
+  $(".vote-form").on ("submit", function(event){
+    event.preventDefault();
+    var $target = $(event.target)
+    var $data = $target.data()
+    var request = $.ajax ({
+      method: "POST",
+      url: '/answers/'+ $data.answerId + '/votes',
+      data: $target.serialize()
+    });
+
+    request.done(function (msg) {
+      $("#vote-count"[]).html($(msg).find('.question_main'))
+    });
   });
 
 
