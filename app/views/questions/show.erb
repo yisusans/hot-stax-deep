@@ -3,14 +3,16 @@
 <p id="body"><%= @question.body %></p>
 <p id="date">Posted: <%= @question.created_at %></p>
 
+
     <% if logged_in? %>
-          <form class="vote-form-question" action="/questions/<%=@question.id%>/votes" method="post" data-question-id="<%=@question.id%>">
+        <form class="vote-form-question" action="/questions/<%=@question.id%>/votes" method="post" data-question-id="<%=@question.id%>">
             <input type="hidden" name="vote" value="<%=@question.id%>">
             <input type="submit" value="Vote" class="button">
           </form>
     <% end %>
 
     <div class="vote-count"><%=@question.votes.count %></div> votes
+
 
   <div id="question-comments-show">
     <%@question.comments.each do |comment|%>
@@ -24,16 +26,17 @@
   </div>
 
   <%if logged_in?%>
-    <a id="answer-get-form" data-question-id="<%=@question.id%>" href="/questions/:id/answers">Post an Answer</a>
+    <a id="answer-get-form" data-question-id="<%=@question.id%>" href="/questions/<%=@question.id%>/answers">Post an Answer</a>
     <div id="answer-form-show"></div>
   <%end%>
 
 <div class="answers-post" >
   <%@answers.reverse.each do |answer|%>
-  <div id="answers-post-box">
-    <p><%=answer.answer%> <a href='/users/<%=answer.user.id%>'><%=answer.user.username%></a></p>
-    </p>Written at: <%=answer.created_at%></p>
-  </div>
+    <div class="whole-answer">
+    <div id="answers-post-box">
+      <p><%=answer.answer%> <a href='/users/<%=answer.user.id%>'><%=answer.user.username%></a></p>
+      </p>Written at: <%=answer.created_at%></p>
+    </div>
 
     <% if answer.is_best? == 'true' %>
       <p><%= "BEST Answer!!!!" %><p>
@@ -42,7 +45,7 @@
     <% if logged_in? %>
       <form class="vote-form" action="/answers/<%=answer.id%>/votes" method="post" data-answer-id="<%=answer.id%>">
         <input type="hidden" name="vote" value="<%=answer.id%>">
-        <input type="submit" value="Vote" class="button">
+        <input type="submit" value="Vote Answer" class="button">
       </form>
     <% end %>
 
@@ -55,14 +58,18 @@
 
     <div class="vote-count"><%=answer.votes.count %></div> votes
 
-<div id="comments-show">
+    <div id="comments-show">
       <%answer.comments.each do |comment|%>
-      <p> * <%=comment.comment%> </p>
-        <%end%>
+        <p> * <%=comment.comment%> </p>
+      <%end%>
+
       <%if logged_in?%>
         <a id="answer-get-comment" data-answer-id="<%=answer.id%>" href="/answers/<%=answer.id%>/comments">Comment</a>
         <div id="answer-comment-form-show"></div>
-    <%end%>
+      <%end%>
+    </div>
+    </div>
+
   <%end%>
 </div>
 </div>
