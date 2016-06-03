@@ -10,5 +10,12 @@ post '/questions/:id/answers' do
     @errors = ["Please type an answer:"]
     erb :'answers/_all_answers', layout: false
   end
-
 end
+
+get '/answers/new' do
+  if request.xhr?
+    erb :'answers/_show', layout: false
+  end
+end
+
+

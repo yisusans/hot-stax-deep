@@ -4,12 +4,31 @@
 <p id="body"><%= @question.body %></p>
 <p id="date">Posted: <%= @question.created_at %></p>
 
+<div class="answers-post" >
+  <%@answers.each do |answer|%>
+    <p><%=answer.answer%></p>
+    <p><%=answer.user.username%></p>
+    <p><%=answer.created_at%></p>
+      <%answer.comments.each do |comment|%>
+      <p> * <%=comment.comment%> <p>
+        <%end%>
+  <%if logged_in?%>
+    <a id="answer-get-form" href="/answers/new">Ask an Answer</a>
+    <div id="answer-form-show"></div>
+  <%end%>
+<%end%>
 
+</div>
 
-<%=erb(:"/answers/_all_answers")%>
-<% if logged_in? %>
-  <%=erb(:"/answers/_show")%>
+<% if @errors %>
+  <% @errors.each do |error_message| %>
+    <p><%= error_message %></p>
+  <% end %>
 <% end %>
+
+
+
+
 
 
 
