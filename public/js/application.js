@@ -1,4 +1,5 @@
 $(document).ready( function(){
+
   $(".answer-box").on ("submit", function(event){
     event.preventDefault();
     var $target = $(event.target)
@@ -13,7 +14,6 @@ $(document).ready( function(){
       });
     $("#answer-text-box").val("");
   });
-
 
 
 
@@ -41,8 +41,6 @@ $(document).ready( function(){
     event.preventDefault();
     var $target = $(event.target)
     var $data = $target.data()
-    // console.log('/answers/'+ $data.answerId + '/votes');
-    debugger;
     var request = $.ajax ({
       method: "POST",
       url: '/answers/'+ $data.answerId + '/votes',
@@ -51,12 +49,36 @@ $(document).ready( function(){
 
     request.done(function (msg) {
       console.log(msg['votes']);
-      $target.parent().find('#vote-count').text(msg["votes"])
+      $target.parent().find('.vote-count').text(msg["votes"])
     });
     request.fail(function (msg) {
       console.log(msg)
     });
   });
+
+
+
+
+$(".question_show").on ("submit", ".vote-form-question", function(event){
+    event.preventDefault();
+    var $target = $(event.target)
+    var $data = $target.data()
+    debugger;
+    var request = $.ajax ({
+      method: "POST",
+      url: '/questions/'+ $data.questionId + '/votes',
+      data: $target.serialize()
+    });
+
+    request.done(function (msg) {
+      $target.parent().find('.vote-count').text(msg["votes"])
+
+    });
+    request.fail(function (msg) {
+      console.log(msg)
+    });
+  });
+
 
 
 
