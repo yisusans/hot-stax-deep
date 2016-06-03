@@ -23,7 +23,8 @@ $(document).ready( function(){
       data: $target.serialize()
     });
     request.done(function (msg) {
-      $(".answers-post").prepend(msg)
+      $(".answers-post").prepend(msg);
+      $target.remove();
     });
   });
 
