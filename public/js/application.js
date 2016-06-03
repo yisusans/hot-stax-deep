@@ -14,6 +14,9 @@ $(document).ready( function(){
     $("#answer-text-box").val("");
   });
 
+
+
+
   $(".question-box").on ("submit", function(event){
     event.preventDefault();
     var $target = $(event.target)
@@ -29,6 +32,30 @@ $(document).ready( function(){
 
     $("#title-text-box").val("");
     $("#body-text-box").val("");
+  });
+
+
+
+
+  $(".answers-post").on ("submit", ".vote-form", function(event){
+    event.preventDefault();
+    var $target = $(event.target)
+    var $data = $target.data()
+    // console.log('/answers/'+ $data.answerId + '/votes');
+    debugger;
+    var request = $.ajax ({
+      method: "POST",
+      url: '/answers/'+ $data.answerId + '/votes',
+      data: $target.serialize()
+    });
+
+    request.done(function (msg) {
+      console.log(msg['votes']);
+      $target.parent().find('#vote-count').text(msg["votes"])
+    });
+    request.fail(function (msg) {
+      console.log(msg)
+    });
   });
 
 
