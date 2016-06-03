@@ -21,12 +21,18 @@
 
 <div class="answers-post" >
   <%@answers.reverse.each do |answer|%>
-    <p><%=answer.answer%></p>
-    <p><a href='/users/<%=answer.user.id%>'><%=answer.user.username%></a></p>
-    <p><%=answer.created_at%></p>
+  <div id="answers-post-box">
+    <p><%=answer.answer%> <a href='/users/<%=answer.user.id%>'><%=answer.user.username%></a></p>
+    </p>Written at: <%=answer.created_at%></p>
+  </div>
+
       <%answer.comments.each do |comment|%>
-      <p> * <%=comment.comment%> <p>
+      <p> * <%=comment.comment%> </p>
         <%end%>
+      <%if logged_in?%>
+        <a id="answer-get-comment" data-answer-id="<%=answer.id%>" href="/answers/<%=answer.id%>/comments">Potato</a>
+        <div id="answer-comment-form-show"></div>
+    <%end%>
   <%end%>
 </div>
 

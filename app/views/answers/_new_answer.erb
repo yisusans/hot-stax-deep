@@ -1,2 +1,4 @@
-<p><%=@answer.answer%><p>
-<p><%=@answer.user.username%><p>
+<div id="answers-post-box">
+  <p><%=@answer.answer%> <a href='/users/<%=@answer.user.id%>'><%=@answer.user.username%></a></p>
+  </p>Written at: <%=@answer.created_at%></p>
+</div>

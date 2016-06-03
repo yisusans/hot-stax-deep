@@ -182,3 +182,7 @@ body {
   font-size: 11px;
   line-height: 0.7
 }
+
+#answers-post-box {
+  line-height: 0.9;
+}
