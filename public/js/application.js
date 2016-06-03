@@ -11,6 +11,9 @@ $(document).ready( function(){
     request.done(function (msg){
       $("#answer-form-show").html(msg)
     });
+    request.fail(function (msg) {
+      console.log(msg)
+    });
   });
 
   $("#answer-form-show").on("submit", "#answer-box", function(event) {
@@ -25,6 +28,9 @@ $(document).ready( function(){
     request.done(function (msg) {
       $(".answers-post").prepend(msg);
       $target.remove();
+    });
+    request.fail(function (msg) {
+      console.log(msg)
     });
   });
 
@@ -61,6 +67,38 @@ $(document).ready( function(){
     });
     request.fail(function (msg) {
       console.log(msg)
+    });
+  });
+
+  $("#question-get-comment").on ("click", function(event){
+    event.preventDefault();
+    var $target = $(event.target);
+    var $data = $target.data();
+    var request = $.ajax({
+      method: "GET",
+      url:$data.questionId + '/comments',
+      data: $target.serialize()
+    });
+
+    request.done(function (msg) {
+      $("#question-comment-form-show").html(msg);
+    });
+  });
+
+  $("#question-comments-show").on ("submit", "#q-comment-form", function(event) {
+    event.preventDefault();
+    var $target = $(event.target);
+    var $data = $target.data();
+
+    var request = $.ajax({
+      method: "POST",
+      url:$data.questionId + '/comments',
+      data: $target.serialize()
+    });
+
+    request.done(function (msg) {
+      $("#question-comments-show").append(msg);
+      $target.remove();
     });
   });
 

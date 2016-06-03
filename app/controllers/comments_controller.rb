@@ -1,11 +1,16 @@
-post '/questions/:id/comments' do
-  comment = Comment.new(user_id: current_user.id, comment: params[:comment], commentable_type: "Question", commentable_id: params[:id])
+get '/questions/:id/comments' do
   @question = Question.find_by(id: params[:id])
-  @comments = @question.comments
-  @answer = @question.answers
-  if comment.save
-    # ajax this
-    erb :"/questions/show"
+  if request.xhr?
+    erb :'/comments/_questions_comments', layout: false
+  end
+end
+
+post '/questions/:id/comments' do
+  @comment = Comment.new(user_id: current_user.id, comment: params[:comment], commentable_type: "Question", commentable_id: params[:id])
+  if @comment.save
+    if request.xhr?
+      erb :"/comments/_questions_comments_show", layout: false
+    end
   end
 end
 
