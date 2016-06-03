@@ -178,3 +178,7 @@ body {
 #question-get-comment {
   font-size: 10px;
 }
+#question-comments-show {
+  font-size: 11px;
+  line-height: 0.7
+}
