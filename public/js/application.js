@@ -48,9 +48,9 @@ $(document).ready( function(){
     });
 
     request.done(function (msg) {
-      console.log(msg['votes']);
       $target.parent().find('.vote-count').text(msg["votes"])
     });
+
     request.fail(function (msg) {
       console.log(msg)
     });
@@ -72,8 +72,8 @@ $(".question_show").on ("submit", ".vote-form-question", function(event){
 
     request.done(function (msg) {
       $target.parent().find('.vote-count').text(msg["votes"])
-
     });
+
     request.fail(function (msg) {
       console.log(msg)
     });

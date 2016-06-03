@@ -12,3 +12,11 @@ post '/questions/:id/answers' do
   end
 
 end
+
+
+post '/answers/:id/best' do
+  @answer = Answer.find_by(id: params[:answer_id])
+  @question_id = @answer.question.id
+  @answer.update_attribute(:is_best?, 'true')
+  redirect "/questions/#{@question_id}"
+end
