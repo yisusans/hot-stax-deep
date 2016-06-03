@@ -139,7 +139,25 @@ $(".question_show").on ("submit", ".vote-form-question", function(event){
     request.fail(function (msg) {
       console.log(msg)
     });
+)};
+
+  $("#answer-comment-form-show").on ("submit", function(event) {
+    event.preventDefault();
+    var $target = $(event.target);
+    var $data = $target.data();
+
+    var request = $.ajax({
+      method: "POST",
+      url: '/answers/' + $data.answerID + '/comments',
+      data: $target.serialize()
+    });
+    request.done(function (msg) {
+      $("#comments-show").append(msg);
+      $target.remove();
+    });
   });
+
+
 });
 
 
