@@ -3,21 +3,20 @@
 <h3 class="author_links"><a href='/users/<%=@question.user.id%>'><%= @question.user.username %></a></h3>
 <p id="body"><%= @question.body %></p>
 <p id="date">Posted: <%= @question.created_at %></p>
+  <%if logged_in?%>
+    <a id="answer-get-form" data-question-id="<%=@question.id%>" href="/questions/:id/answers">Post an Answer</a>
+    <div id="answer-form-show"></div>
+  <%end%>
 
 <div class="answers-post" >
-  <%@answers.each do |answer|%>
+  <%@answers.reverse.each do |answer|%>
     <p><%=answer.answer%></p>
     <p><%=answer.user.username%></p>
     <p><%=answer.created_at%></p>
       <%answer.comments.each do |comment|%>
       <p> * <%=comment.comment%> <p>
         <%end%>
-  <%if logged_in?%>
-    <a id="answer-get-form" data-question-id="<%=@question.id%>" href="/questions/:id/answers">Post an Answer</a>
-    <div id="answer-form-show"></div>
   <%end%>
-<%end%>
-
 </div>
 
 <% if @errors %>
