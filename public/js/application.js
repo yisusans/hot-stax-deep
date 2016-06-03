@@ -125,7 +125,21 @@ $(document).ready( function(){
 
   $("#answer-comment-form-show").on ("submit", function(event) {
     event.preventDefault();
+    var $target = $(event.target);
+    var $data = $target.data();
+
+    var request = $.ajax({
+      method: "POST",
+      url: '/answers/' + $data.answerID + '/comments',
+      data: $target.serialize()
+    });
+    request.done(function (msg) {
+      $("#comments-show").append(msg);
+      $target.remove();
+    });
   });
+
+
 });
 
 
