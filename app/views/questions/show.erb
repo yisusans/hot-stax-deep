@@ -13,7 +13,7 @@
       <p> * <%=comment.comment%> <p>
         <%end%>
   <%if logged_in?%>
-    <a id="answer-get-form" href="/answers/new">Ask an Answer</a>
+    <a id="answer-get-form" href="/answers/new">Post an Answer</a>
     <div id="answer-form-show"></div>
   <%end%>
 <%end%>
@@ -25,12 +25,6 @@
     <p><%= error_message %></p>
   <% end %>
 <% end %>
-
-
-
-
-
-
 
 <% @comments.each do |comment| %>
   <div class="comments">

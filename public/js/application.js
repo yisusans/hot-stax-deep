@@ -30,7 +30,6 @@ $(document).ready( function(){
       url: "/answers/new"
 
     });
-
     request.done(function (msg){
       $("#answer-form-show").html(msg)
     });
@@ -67,6 +66,9 @@ $(document).ready( function(){
     event.preventDefault();
 
   });
+});
+
+
 
   // $(".answer-box").on ("submit", function(event){
   //   event.preventDefault();
