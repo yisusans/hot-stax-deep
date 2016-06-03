@@ -59,6 +59,9 @@ $(document).ready( function(){
   });
 
 
+  $(".post-button").on ("submit", function(event) {
+    event.preventDefault();
+  });
 
 });
 

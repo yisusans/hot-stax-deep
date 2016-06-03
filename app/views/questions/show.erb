@@ -4,10 +4,14 @@
 <p id="body"><%= @question.body %></p>
 <p id="date">Posted: <%= @question.created_at %></p>
 
+
+
 <%=erb(:"/answers/_all_answers")%>
 <% if logged_in? %>
   <%=erb(:"/answers/_show")%>
 <% end %>
+
+
 
 <% @comments.each do |comment| %>
   <div class="comments">
@@ -17,6 +21,5 @@
     -------------
     <br>
   </div>
-  <%end%>
-
+<%end%>
 
