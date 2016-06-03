@@ -175,3 +175,14 @@ body {
 body {
   text-align: center;
 }
+#question-get-comment {
+  font-size: 10px;
+}
+#question-comments-show {
+  font-size: 11px;
+  line-height: 0.7
+}
+
+#answers-post-box {
+  line-height: 0.9;
+}
