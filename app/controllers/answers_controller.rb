@@ -12,7 +12,8 @@ post '/questions/:id/answers' do
   end
 end
 
-get '/answers/new' do
+get '/questions/:id/answers' do
+  @question = Question.find_by(id: params[:id])
   if request.xhr?
     erb :'answers/_show', layout: false
   end

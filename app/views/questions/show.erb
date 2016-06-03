@@ -13,7 +13,7 @@
       <p> * <%=comment.comment%> <p>
         <%end%>
   <%if logged_in?%>
-    <a id="answer-get-form" href="/answers/new">Post an Answer</a>
+    <a id="answer-get-form" data-question-id="<%=@question.id%>" href="/questions/:id/answers">Post an Answer</a>
     <div id="answer-form-show"></div>
   <%end%>
 <%end%>

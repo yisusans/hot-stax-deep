@@ -2,7 +2,6 @@ $(document).ready( function(){
   $("#answer-get-form").on ("click", function(event){
     event.preventDefault();
     var $target = $(event.target)
-
     var $data = $target.data()
     var request = $.ajax ({
       method: "POST",
@@ -29,6 +28,13 @@ $(document).ready( function(){
       method: "GET",
       url: "/answers/new"
 
+
+    var $target = $(event.target);
+    var $data = $target.data();
+    // debugger
+    var request = $.ajax({
+      method: "GET",
+      url: $data.questionId + '/answers'
     });
     request.done(function (msg){
       $("#answer-form-show").html(msg)
@@ -65,13 +71,15 @@ $(document).ready( function(){
   $(".post-button").on ("submit", function(event) {
     event.preventDefault();
 
+  $("#answer-form-show").on ("click", "#answer-box", function(event){
+    event.preventDefault();
+
+    });
   });
 });
 
 
 
-  // $(".answer-box").on ("submit", function(event){
-  //   event.preventDefault();
   //   var $target = $(event.target)
   //   var $data = $target.data()
   //   var request = $.ajax ({
